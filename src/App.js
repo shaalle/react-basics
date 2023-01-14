@@ -2,12 +2,25 @@
 import './App.css';
 
 function App() {
-  const name = 'Shaalle!';
+
   return (
     <div className="App">
-      `Hello ${name}`
+      <div>
+        <User />
+        <User />
+        <User />
+      </div>
+    </div>
+  );
+
+}
+const User = () => {
+  return (
+    <div>
+      <h1>Sucdi</h1>
+      <h2>28</h2>
+      <h2>drssucdi@gmail.com</h2>
     </div>
   );
 }
-
 export default App;
