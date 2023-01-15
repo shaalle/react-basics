@@ -2,37 +2,31 @@
 import './App.css';
 
 function App() {
+  const Planets = [
+    {name: "Mars", isGasPlanet: false},
+    {name: "Earth", isGasPlanet: false},
+    {name: "Jupiter", isGasPlanet: true},
+    {name: "Venus", isGasPlanet: false},
+    {name: "Neptune", isGasPlanet: true},
+    {name: "Uranus", isGasPlanet: true},
+  ];
+  
+  return(
+    <div className="App" style={{fontSize: "1.9rem"}}>
+      {Planets.map((planet,key) => {
+        return <Planet name={planet.isGasPlanet && planet.name} />
+      })}
+    </div>
+  );
 
-  return (
-    <div className="App">
-      <div>
-        <User name="Sucdi" age={28} email="drssucdi@gmail.com"/>
-        <User name="Jamaal" age={39} email="jamal@gmail.com"/>
-        <User name="Ridwaan" age={16} email="Rid@gmail.com"/>
-        <Jobs salary={90000} position="Senior SDE" company="Amazon"/>
+}
+
+const Planet = (props) => {
+  return(
+    <div>
+      {props.name} {props.isGasPlanet}
       </div>
-    </div>
-  );
-
-}
-// This is a Component 
-const User = (props) => {
-  return (
-    <div>
-      <h1>{props.name}</h1>
-      <h2>{props.age}</h2>
-      <h2>{props.email}</h2>
-    </div>
   );
 }
 
-const Jobs = (props) => {
-  return (
-    <div>
-      <h1>{props.salary}</h1>
-      <h1>{props.position}</h1>
-      <h1>{props.company}</h1>
-    </div>
-  )
-}
 export default App;
