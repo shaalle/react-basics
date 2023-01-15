@@ -1,32 +1,20 @@
 
 import './App.css';
-
+import {useState} from "react"
 function App() {
-  const Planets = [
-    {name: "Mars", isGasPlanet: false},
-    {name: "Earth", isGasPlanet: false},
-    {name: "Jupiter", isGasPlanet: true},
-    {name: "Venus", isGasPlanet: false},
-    {name: "Neptune", isGasPlanet: true},
-    {name: "Uranus", isGasPlanet: true},
-  ];
-  
+  const [age, setAge] = useState(0);
+  const increaseAge = () =>{
+    setAge(age + 1)
+  }
+
   return(
     <div className="App" style={{fontSize: "1.9rem"}}>
-      {Planets.map((planet,key) => {
-        return <Planet name={planet.isGasPlanet && planet.name} />
-      })}
+      {age}
+      <button onClick={increaseAge} >Increase Age</button>
     </div>
   );
 
 }
 
-const Planet = (props) => {
-  return(
-    <div>
-      {props.name} {props.isGasPlanet}
-      </div>
-  );
-}
 
 export default App;
