@@ -2,15 +2,10 @@
 import './App.css';
 import {useState} from "react"
 function App() {
-  const [age, setAge] = useState(0);
-  const increaseAge = () =>{
-    setAge(age + 1)
-  }
 
   return(
-    <div className="App" style={{fontSize: "1.9rem"}}>
-      {age}
-      <button onClick={increaseAge} >Increase Age</button>
+    <div className="App">
+      <input type="text" />
     </div>
   );
 
