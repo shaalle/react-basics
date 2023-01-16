@@ -174,3 +174,52 @@ function App() {
 
 
 export default App; -->
+
+<!-- ------------ Example 7: State ----------------------------------------- -->
+
+
+<!-- import './App.css';
+import {useState} from "react"
+function App() {
+  const [inputValue, setInputValue] = useState("");
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value)
+  }
+
+  return(
+    <div className="App">
+      <input type="text" onChange={handleInputChange} />
+      {inputValue}
+    </div>
+  );
+
+}
+
+
+export default App; -->
+
+<!-- ------------ Example 8: State: Show/Hide Text ----------------------------------------- -->
+
+
+<!-- import './App.css';
+import {useState} from "react"
+function App() {
+  const [showText, setShowText] = useState(true);
+  const toggleText = () => {
+    // showText ? setShowText(false) : setShowText(true)
+    setShowText(!showText)
+    console.log(!showText)
+  }
+
+  return(
+    <div className="App">
+      <button onClick={toggleText}>Show/Hide</button>
+      {showText && <h1>My name is Shaalle!</h1>}
+    </div>
+  );
+
+}
+
+
+export default App; -->
+
