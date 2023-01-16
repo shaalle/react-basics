@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  font-size: 1.9rem;
   /* background-color: darksalmon; */
 }
 
@@ -9,19 +8,6 @@
   pointer-events: none;
 }
 
-.addTask  input {
-  margin-right: 1rem;
-  padding: 1rem 0 1rem 1rem;
-  background-color: white;
-  border: none;
-  border-radius: 3px;
-  font-size: 1.4rem;
-  width: 350px;
-}
-
-button, input {
-  overflow: visible;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

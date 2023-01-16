@@ -1,0 +1,70 @@
+.App {
+    text-align: center;
+    font-size: 1.9rem;
+    /* background-color: darksalmon; */
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 850px;
+    height: 550px;
+    transform: translate(-50%, -50%);
+    background-color: #393F49;
+    border-radius: 5px;
+    padding: 4rem;
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 30%);
+  }
+  
+  /* button{
+    background-color: #61dbfb;
+     */
+  /* } */
+  
+  .addTask  input {
+    margin-right: 1rem;
+    
+    padding: 0.4rem 0 0.4rem 0.4rem;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    width: 350px;
+  }
+
+  .addTask  input::placeholder{color:#8D9196}
+ 
+  .addTask  button{
+    padding:0.4rem 0.4rem;
+    color:white;
+    background-color:#61DBFB;
+    border:none;
+    border-radius:3px;
+    font-size:1.4rem;
+    cursor:pointer
+}
+.task .trash-can{position:absolute;top:50%;right:0;cursor:pointer}
+.task .trash-can:hover path{fill:#FF5450}
+.task .recover{position:relative;top:3px;width:18px;height:18px;margin-right:2rem;cursor:pointer}
+.task .recover path{fill:#8D9196}
+  button, input {
+    overflow: visible;
+  }
+  
+  button, input {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  p{
+    color: white;
+  }
+
