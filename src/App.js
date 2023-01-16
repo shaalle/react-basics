@@ -2,12 +2,16 @@
 import './App.css';
 import {useState} from "react"
 function App() {
-  let [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
+  const increase = ()=>{setCount(count + 1);}
+  const decrease = ()=>{setCount(count - 1);}
+  const setToZero = ()=>{setCount(0);}
+  
   return(
     <div className="App">
-      <button onClick={()=>{setCount(++count); console.log(count)}}>Increase</button>
-      <button onClick={()=>{setCount(--count); console.log(count)}}>Decrease</button>
-      <button onClick={()=>{setCount(0);}}>Set to Zero</button>
+      <button onClick={increase}>Increase</button>
+      <button onClick={decrease}>Decrease</button>
+      <button onClick={setToZero}>Set to Zero</button>
       {count}
     </div>
   );
