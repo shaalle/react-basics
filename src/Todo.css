@@ -72,9 +72,16 @@
   fill:#FF5450
 }
 
+.check-mark {
+  margin-top: 35px;
+  position: absolute;
+  right: 50px;
+}
+
 .trash-can{
   margin-top: 40px;
 }
+
   button, input {
     overflow: visible;
   }
