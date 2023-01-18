@@ -114,3 +114,13 @@
   font-family: monospace;
 
 }
+
+p {
+  color: white;
+  
+}
+
+.task-name {
+  color: white;
+  background-color: yellow;
+}
