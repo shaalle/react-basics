@@ -66,6 +66,8 @@
   display: flex;
   margin: 15px;
   justify-content: space-between; 
+  align-items: center;
+  
 }
 
 .task .trash-can:hover path{
@@ -73,13 +75,13 @@
 }
 
 .check-mark {
-  margin-top: 35px;
+  
   position: absolute;
   right: 50px;
 }
 
 .trash-can{
-  margin-top: 40px;
+  margin-top: 0;
 }
 
   button, input {
@@ -122,5 +124,5 @@ p {
 
 .task-name {
   color: white;
-  background-color: yellow;
+  
 }
