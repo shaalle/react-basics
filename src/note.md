@@ -464,3 +464,267 @@ export const Task = (props) => {
 -->
 
 
+<!-- ------------ Example 10: State: TodoList App Updated Version P4 ----------------------------------------- -->
+
+<!-- UI Part -->
+<!-- 
+import './App.css';
+import './Todo.css';
+import {Task} from './Task';
+import {useState} from "react"
+function App() {
+  const [todoList, setTodoList] = useState([]);
+  const [newTask, setNewTask] = useState("");
+  const [activeTasks, setActiveTasks] = useState(0)
+  const date = new Date();
+  const daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const dayName = daysOfWeek[date.getDay()];
+  const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+  const month = monthNames[date.getMonth()];
+  const day = date.getDate();
+  const todaysDate = `${dayName}, ${month} ${day}`;
+  const handleChange = (event) => {
+    setNewTask(event.target.value)
+  }
+
+  const addTask = () => {
+    const task = {
+      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
+      taskName: newTask
+    };
+
+    if(newTask === "" || newTask === 0){
+      alert('Please enter a task')
+    }else{
+      setTodoList([...todoList, task]);
+      setActiveTasks(todoList.length + 1);
+    }
+  }
+
+  const deleteTask = (id) => {
+    const newTodoList = todoList.filter((task) =>  task.id !== id);
+    setTodoList(newTodoList);
+    setActiveTasks(todoList.length - 1);
+  }
+
+  
+
+  return(
+    <div className="App">
+      <div className="container">
+        
+      
+     <div className="addTask">
+     <p class="date">{todaysDate}</p>
+     <p class="number-of-tasks">{activeTasks} Active Tasks</p>
+      <input onChange={handleChange} placeholder="Enter a task..."/>
+      <button onClick={addTask}>Add Task</button>
+      
+     </div>
+     <div className="list">
+      {todoList.map((task)=>{
+        return (<Task taskName={task.taskName} id={task.id} deleteTask={deleteTask}/>
+        );
+      })}
+     </div>
+     </div>
+    </div>
+  );
+  }
+
+  
+
+
+export default App; -->
+
+<!-- Components Part -->
+<!-- import { useState } from "react";
+
+// This is a Component
+export const Task = (props) => {
+  // let circleOutline = "white"
+  const [circleOutline, setCircleOutLine] = useState("white");
+  const [flag, setFlag] = useState(false)
+  
+  
+  const circleColor = ()=>{
+    circleOutline === "white" ? setCircleOutLine("green") : setCircleOutLine("white");
+    setFlag(!flag)
+  }
+  
+    return<div style={{backgroundColor: circleOutline === "white" ? "#393F49" : circleOutline}} className="task">
+          <p className="task-name" >{props.taskName}</p>
+          <svg  onClick={circleColor} className="check-mark" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 512 512"><title>Complete Task</title><path fill={!flag ? circleOutline : "#393F49"} d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM218,360.38,137.4,270.81l23.79-21.41,56,62.22L350,153.46,374.54,174Z"/></svg>
+          <svg onClick={() => props.deleteTask(props.id)} className="trash-can" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" ><title>Delete Task</title><path fill="#8D9196" d="M17.4 2.7h-4v-.6c0-1.2-.9-2.1-2-2.1H7.6a2 2 0 0 0-2 2v.7h-4c-.3 0-.5.3-.5.6s.2.5.5.5h1v12.4c0 1.5 1.2 2.8 2.8 2.8h8.2c1.6 0 2.9-1.3 2.9-2.8V3.8h1c.2 0 .4-.2.4-.5s-.2-.6-.5-.6zM6.6 2.1c0-.6.5-1 1-1h3.8c.5 0 1 .4 1 1v.6H6.6v-.6zm8.8 14c0 1-.8 1.8-1.8 1.8H5.4c-1 0-1.8-.7-1.8-1.7V3.8h11.8v12.4z"></path><path fill="#8D9196" d="M9.5 16c.3 0 .5-.2.5-.5V6.2c0-.3-.2-.5-.5-.5s-.5.2-.5.5v9.3c0 .3.2.6.5.6zM6 15.5c.4 0 .6-.3.6-.6V6.8c0-.3-.2-.5-.5-.5s-.6.2-.6.5v8.1c0 .3.3.6.6.6zM13 15.5c.2 0 .5-.3.5-.6V6.8c0-.3-.3-.5-.6-.5s-.5.2-.5.5v8.1c0 .3.2.6.5.6z"></path></svg>
+        </div>;
+} -->
+
+<!-- Styling Part -->
+<!-- .App {
+    text-align: center;
+    font-size: 1.9rem;
+    /* background-color: darksalmon; */
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  .container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 850px;
+    height: 550px;
+    transform: translate(-50%, -50%);
+    background-color: #393F49;
+    border-radius: 5px;
+    padding: 4rem;
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 30%);
+  }
+  
+  /* button{
+    background-color: #61dbfb;
+     */
+  /* } */
+  
+  .addTask  input {
+    margin-right: 1rem;
+    
+    padding: 0.4rem 0 0.4rem 0.4rem;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    width: 350px;
+  }
+
+  .addTask  input::placeholder{color:#8D9196}
+ 
+  .addTask  button{
+    padding:0.4rem 0.4rem;
+    color:white;
+    background-color:#61DBFB;
+    border:none;
+    border-radius:3px;
+    font-size:1.4rem;
+    cursor:pointer
+}
+.list{
+  margin-top: 50px;
+  position: absolute;
+}
+
+.list {
+  height: calc(850px - 435px);
+  overflow-y: scroll;
+}
+
+.task{
+  width: 650px;
+  height: 50px;
+  display: flex;
+  margin: 15px;
+  justify-content: space-between; 
+  align-items: center;
+  
+}
+
+.task .trash-can:hover path{
+  fill:#FF5450
+}
+
+.check-mark {
+  
+  position: absolute;
+  right: 50px;
+}
+
+.trash-can{
+  margin-top: 0;
+}
+
+  button, input {
+    overflow: visible;
+  }
+  
+  button, input {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  p{
+    color: white;
+  }
+
+  .date {
+    position: absolute;
+    top: -7px;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.number-of-tasks {
+  color: #61DBFB;
+  font-size: 1rem;
+  position: absolute;
+  top: 28px;
+  font-family: monospace;
+
+}
+
+p {
+  color: white;
+  
+}
+
+.task-name {
+  color: white;
+  
+} -->
+
+<!-- ------------ Example 11: State: Mounting/Updating/Unmounting ----------------------------------------- -->
+
+
+<!-- import './App.css';
+import {useState} from "react"
+import {Text} from "./Text"
+function App() {
+  const [showText, setShowText] = useState(false)
+  return(
+    <div className="App">
+      <button onClick={()=>{
+        setShowText(!showText)
+      }} >Show Text</button>
+      {showText && <Text />}
+    </div>
+  );
+  }
+
+  
+
+
+export default App; -->
+
+<!-- Text Component is here  -->
+
+<!-- import React from "react"
+import { useState } from "react"
+export const Text = () => {
+    const [text, showText] = useState("");
+
+    return(
+        <div>
+            <input onChange={(event)=>{
+                showText(event.target.value)
+            }} />
+            <h1>{text}</h1>
+        </div>
+    );
+} -->
