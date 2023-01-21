@@ -786,7 +786,7 @@ function App() {
 
 export default App; -->
 
-<!-- ------------ Example 12: passing name to an Api and returnig the age of the person ----------------------------------------- -->
+<!-- ------------ Example 12: passing name to an Api and returnig the age of the person Part1 ----------------------------------------- -->
 
 <!-- 
 import './App.css';
@@ -816,3 +816,34 @@ function App() {
 
 export default App; -->
 
+<!-- ------------ Example 12: passing name to an Api and returnig the age of the person Part2 ----------------------------------------- -->
+
+
+<!-- import './App.css';
+import Axios from 'axios';
+import {useEffect, useState} from "react"
+
+function App() {
+  const API_URL = 'https://api.agify.io/?name=';
+  const [name, setName] = useState("")
+  const [predictedAge, setPredictedAge] = useState(null)
+  
+  const agePredictor = () => {
+    Axios.get(`${API_URL}${name}`).then((res)=> {setPredictedAge(res.data)})
+  }
+
+  return(
+    <div className="App">
+      <input onChange={(event)=>{setName(event.target.value)}} placeholder='Enter your name...'/>
+      <button onClick={agePredictor}>Predict Age</button>
+     <p>Predicted Name: {predictedAge?.name}</p>
+     <p>Predicted Age: {predictedAge?.age}</p>
+     <p>Predicted Count: {predictedAge?.count}</p>
+    </div>
+  );
+  }
+
+  
+
+
+export default App; -->
