@@ -4,23 +4,19 @@ import Axios from 'axios';
 import {useEffect, useState} from "react"
 
 function App() {
-  const API_URL = 'https://catfact.ninja/fact';
-  const [catFact, setCatFact] = useState("")
-
-  // fetch(API_URL).then((res)=> res.json())
-  // .then((data)=> console.log(data.fact))
-  // Axios is a library which is used to make requests to an API Like Fetch Function in js
-  const generateCatFact = () => {
-    Axios.get(API_URL).then((res)=> setCatFact(res.data.fact));
+  const API_URL = 'https://api.agify.io/?name=';
+  const [name, setName] = useState("")
+  const [predictedAge, setPredictedAge] = useState("0")
+  
+  const agePredictor = () => {
+    Axios.get(`${API_URL}${name}`).then((res)=> {setPredictedAge(res.data.age)})
   }
-  useEffect(() => {
-    generateCatFact();
-  },[]);
 
   return(
     <div className="App">
-      <button onClick={generateCatFact}>Generate Cat Fact</button>
-     <p>{catFact}</p>
+      <input onChange={(event)=>{setName(event.target.value)}} placeholder='Enter your name...'/>
+      <button onClick={agePredictor}>Predict Age</button>
+     <h1>Predicted Age: {predictedAge}</h1>
     </div>
   );
   }
