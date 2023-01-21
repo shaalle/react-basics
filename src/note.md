@@ -728,3 +728,60 @@ export const Text = () => {
         </div>
     );
 } -->
+
+<!-- Another example of Text Component is here  -->
+
+<!-- import React from "react"
+import { useState, useEffect } from "react"
+export const Text = () => {
+    const [text, showText] = useState("");
+
+    useEffect(()=>{
+        console.log('COMPONENT MOUNTED')
+        return () => {
+            console.log('COMPONENT UNMOUNTED')
+        };
+    }, []);
+
+    return(
+        <div>
+            <input onChange={(event)=>{
+                showText(event.target.value)
+            }} />
+            <h1>{text}</h1>
+        </div>
+    );
+} -->
+
+<!-- ------------ Example 12: useEffect: fetching data from an Api using Axios ----------------------------------------- -->
+
+<!-- import './App.css';
+import Axios from 'axios';
+import {useEffect, useState} from "react"
+
+function App() {
+  const API_URL = 'https://catfact.ninja/fact';
+  const [catFact, setCatFact] = useState("")
+
+  // fetch(API_URL).then((res)=> res.json())
+  // .then((data)=> console.log(data.fact))
+  // Axios is a library which is used to make requests to an API Like Fetch Function in js
+  const generateCatFact = () => {
+    Axios.get(API_URL).then((res)=> setCatFact(res.data.fact));
+  }
+  useEffect(() => {
+    generateCatFact();
+  },[]);
+
+  return(
+    <div className="App">
+      <button onClick={generateCatFact}>Generate Cat Fact</button>
+     <p>{catFact}</p>
+    </div>
+  );
+  }
+
+  
+
+
+export default App; -->
