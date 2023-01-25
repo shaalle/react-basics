@@ -876,7 +876,7 @@ function App() {
 
 export default App; -->
 
-<!-- ------------ Example 15:  react-router-dom ----------------------------------------- -->
+<!-- ------------ Example 15:  React Router Dom Lesson ----------------------------------------- -->
 
 
 <!-- import './App.css';
@@ -916,3 +916,98 @@ export const NavBar = () => {
       </div>
     );
 } -->
+
+<!-- ------------ Example 16:  Prop drilling Example ----------------------------------------- -->
+
+<!-- import './App.css';
+import Axios from 'axios';
+import {useEffect, useState} from "react"
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { Home } from './pages/Home';
+import { Menu } from './pages/Menu';
+import { NavBar } from './Navbar';
+import { Profile } from './pages/Profile';
+function App() {
+  const [username, setUsername] = useState("Shaalle");
+  return(
+    <div className="App">
+     <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home username={username} />} />
+        <Route path='/profile' element={<Profile username={username} setUsername={setUsername} />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+      </Routes>
+     </Router>
+    </div>
+  );
+  }
+
+
+export default App; -->
+
+<!--  Menu Page -->
+  <!-- import { useState } from "react"
+
+export const Menu = () => {
+    const [count, setCount] = useState(0);
+    let counter = 0;
+    const counterApp = () => setCount(count + 1)
+    return <div className="App">
+        <h1>This Is The Menu Page</h1>
+        <button onClick={counterApp}>Counter</button>
+        <h2>{count}</h2>
+    </div>
+
+}
+ -->
+
+ <!-- Home page -->
+ <!-- export const Home = (props) => {
+    return <h1>This Is The Home Page and user is: {props.username}</h1>
+} -->
+
+<!-- Profile Page -->
+<!-- import { ChangeProfile } from "../components/ChangeProfile";
+export const Profile = (props) => {
+  return (
+    <div className="App">
+      {""}
+      <div>PROFILE, user is: {props.username}</div>
+      <ChangeProfile setUsername={props.setUsername} />
+    </div>
+  );
+}; -->
+
+ <!-- Navbar page -->
+
+ <!-- import {Link} from 'react-router-dom'
+export const NavBar = () => {
+    return(
+        <div>
+        <Link to="/" >Home</Link>
+        <Link to="/profile" >Profile</Link>
+        <Link to="/menu" >Menu</Link>
+        
+      </div>
+    );
+} -->
+
+<!-- Change Profile Component -->
+<!-- import { useState } from "react";
+
+export const ChangeProfile = (props) => {
+  const [newUsername, setNewUsername] = useState("");
+  return (
+  <div className="App">
+    <input onChange={(event)=> setNewUsername(event.target.value)}/>
+    <button onClick={()=> props.setUsername(newUsername)}>Change Username</button>
+  </div>
+  );
+}; -->
+
+
+
+
+
