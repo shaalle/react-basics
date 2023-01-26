@@ -6,13 +6,19 @@ import { Home } from "./pages/Home";
 import { Menu } from "./pages/Menu";
 import { NavBar } from "./Navbar";
 import { Profile } from "./pages/Profile";
-
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 export const AppContext = createContext();
 function App() {
-  const [username, setUsername] = useState("Shaalle");
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: true
+      }
+    }
+  });
   return (
     <div className="App">
-      <AppContext.Provider value={{ username, setUsername }}>
+      <QueryClientProvider client={client}>
         <Router>
           <NavBar />
           <Routes>
@@ -22,7 +28,7 @@ function App() {
             <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
           </Routes>
         </Router>
-      </AppContext.Provider>
+        </QueryClientProvider>
     </div>
   );
 }

@@ -1,6 +1,8 @@
-import { useContext } from "react"
-import { AppContext } from "../App"
+import {useQuery} from '@tanstack/react-query';
+import Axios from 'axios';
 export const Home = () => {
-    const {username} = useContext(AppContext)
-    return <h1>This Is The Home Page and user is: {username}</h1>
+    const { data, isLoading, refetch } = useQuery(["cat"], () => {return Axios.get('https://catfact.ninja/fact/').then((res) => res.data);
+    });
+
+    return isLoading ? <h1 style={{color:"teal"}}>Loading..</h1> : <h1>This Is The Home Page  <p>{data?.fact}</p> <button onClick={refetch}>Update Data</button></h1>
 }
