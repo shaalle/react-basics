@@ -1080,6 +1080,53 @@ export const ChangeProfile = () => {
   );
 }; -->
 
+<!-- ------------ Example 18:  Fetching Data in React Query ----------------------------------------- -->
 
+<!-- import "./App.css";
+import Axios from "axios";
+import { useState, createContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Menu } from "./pages/Menu";
+import { NavBar } from "./Navbar";
+import { Profile } from "./pages/Profile";
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+export const AppContext = createContext();
+function App() {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: true
+      }
+    }
+  });
+  return (
+    <div className="App">
+      <QueryClientProvider client={client}>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+          </Routes>
+        </Router>
+        </QueryClientProvider>
+    </div>
+  );
+}
 
+export default App; -->
+
+<!-- Home Page -->
+
+<!-- import {useQuery} from '@tanstack/react-query';
+import Axios from 'axios';
+export const Home = () => {
+    const { data, isLoading, refetch } = useQuery(["cat"], () => {return Axios.get('https://catfact.ninja/fact/').then((res) => res.data);
+    });
+
+    return isLoading ? <h1 style={{color:"teal"}}>Loading..</h1> : <h1>This Is The Home Page  <p>{data?.fact}</p> <button onClick={refetch}>Update Data</button></h1>
+} -->
 
