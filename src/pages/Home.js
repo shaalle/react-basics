@@ -1,3 +1,6 @@
-export const Home = (props) => {
-    return <h1>This Is The Home Page and user is: {props.username}</h1>
+import { useContext } from "react"
+import { AppContext } from "../App"
+export const Home = () => {
+    const {username} = useContext(AppContext)
+    return <h1>This Is The Home Page and user is: {username}</h1>
 }

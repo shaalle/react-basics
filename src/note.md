@@ -1007,6 +1007,78 @@ export const ChangeProfile = (props) => {
   );
 }; -->
 
+<!-- ------------ Example 17:  React useContext API Example ----------------------------------------- -->
+<!-- import "./App.css";
+import Axios from "axios";
+import { useState, createContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Menu } from "./pages/Menu";
+import { NavBar } from "./Navbar";
+import { Profile } from "./pages/Profile";
+
+export const AppContext = createContext();
+function App() {
+  const [username, setUsername] = useState("Shaalle");
+  return (
+    <div className="App">
+      <AppContext.Provider value={{ username, setUsername }}>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+          </Routes>
+        </Router>
+      </AppContext.Provider>
+    </div>
+  );
+}
+
+export default App; -->
+
+<!-- Home Page -->
+
+<!-- import { useContext } from "react"
+import { AppContext } from "../App"
+export const Home = () => {
+    const {username} = useContext(AppContext)
+    return <h1>This Is The Home Page and user is: {username}</h1>
+} -->
+
+<!-- Profile Page -->
+
+<!-- import { ChangeProfile } from "../components/ChangeProfile";
+import {useContext} from 'react';
+import {AppContext} from '../App';
+export const Profile = () => {
+  const {username} = useContext(AppContext);
+  return (
+    <div className="App">
+      {""}
+      <div>PROFILE, user is: {username}</div>
+      <ChangeProfile />
+    </div>
+  );
+}; -->
+
+<!-- Change Profile Component -->
+
+<!-- import { useState, useContext } from "react";
+import {AppContext} from '../App';
+export const ChangeProfile = () => {
+  const {setUsername}  = useContext(AppContext);
+
+  const [newUsername, setNewUsername] = useState("");
+  return (
+  <div className="App">
+    <input onChange={(event)=> setNewUsername(event.target.value)}/>
+    <button onClick={()=> setUsername(newUsername)}>Change Username</button>
+  </div>
+  );
+}; -->
 
 
 
