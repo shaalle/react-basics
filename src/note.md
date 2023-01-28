@@ -1298,3 +1298,41 @@ export const useCount = (initialVal = 0) => {
 
     return [count, increase, decrease, restart];
 } -->
+
+<!-- ------------ Example 21:  Persson Component Without Type Safety Part 1 ----------------------------------------- -->
+
+<!-- import "./App.css";
+import { Person } from "./components/Person";
+
+function App() {
+  
+  return (
+    <div className="App">
+    <Person
+      name='Sucdi'
+      email='Sucdi@gmail.com'
+      age='19'
+      ismarried= {false}
+      friends= {["Salmo", "Nasro", "Jamaal"]} />
+    
+    </div>
+  );
+}
+
+export default App; -->
+
+<!-- Person Component -->
+
+<!-- export const Person = (props) => {
+    return <div>
+        <h1>Name: {props.name}</h1>
+        <h1>Email: {props.email}</h1>
+        <h1>Age: {props.age}</h1>
+        <h1>This person {props.isMarried ? "is" : "is not"} MARRIED</h1>
+         {props.friends.map((firend) => {
+            return <h1>{firend}</h1>
+        })} 
+       
+    </div>
+} -->
+
