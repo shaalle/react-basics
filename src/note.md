@@ -1130,3 +1130,85 @@ export const Home = () => {
     return isLoading ? <h1 style={{color:"teal"}}>Loading..</h1> : <h1>This Is The Home Page  <p>{data?.fact}</p> <button onClick={refetch}>Update Data</button></h1>
 } -->
 
+<!-- ------------ Example 19:  Forms in React ----------------------------------------- -->
+<!-- import "./App.css";
+import { Form } from "./components/Form";
+
+function App() {
+  return (
+    <div className="App">
+      <Form />
+    </div>
+  );
+}
+
+export default App; -->
+
+<!-- Form Component -->
+
+<!-- import {useForm} from 'react-hook-form';
+import * as yup from 'yup';
+import {yupResolver} from '@hookform/resolvers/yup';
+export const Form = () => {
+    const schema = yup.object().shape({
+        fullName: yup.string().required("Your Full Name is Required!"),
+        email: yup.string().email().required(),
+        age: yup.number().positive().integer().min(18).required(),
+        password: yup.string().min(4).max(20).required(),
+        confirmPassword: yup.string().oneOf([yup.ref("password"), null],'Passwords must match').required()
+    });
+
+    const {register, handleSubmit, formState: {errors}} = useForm({
+        resolver: yupResolver(schema),
+    });
+
+    const onSubmit = (data) => {
+        console.log(data);
+    }
+
+    return (
+        <form className='form' onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" placeholder="Full Name..." {...register("fullName")}/>
+            <p className='error-class'>{errors.fullName?.message}</p>
+            <input type="text" placeholder="Email..." {...register("email")}/>
+            <p className='error-class'>{errors.email?.message}</p>
+            <input type="number" placeholder="Age..." {...register("age")}/>
+            <p className='error-class'>{errors.age?.message}</p>
+            <input type="password" placeholder="Password..." {...register("password")}/>
+            <p className='error-class'>{errors.password?.message}</p>
+            <input type="password" placeholder="Confirm Password..." {...register("confirmPassword")}/>
+            <p className='error-class'>{errors.confirmPassword?.message}</p>
+            <input type="submit" />
+        </form>
+    );
+} -->
+
+<!-- ------------ Example 20:  Custom Hooks in React Part 1 ----------------------------------------- -->
+<!-- import "./App.css";
+import { useToggle } from "./useToggle";
+
+
+function App() {
+  const [isVisible, toggle] = useToggle();
+  return (
+    <div className="App">
+      <button onClick={toggle}>{isVisible ? 'Hide' : 'Show'}</button>
+      {isVisible && <h1>Hidden text</h1>}
+    </div>
+  );
+}
+
+export default App; -->
+
+<!-- useToggle Hook  -->
+<!-- import {useState} from 'react';
+
+export const useToggle = (initialVal = false) => {
+    const [state, setState] = useState(initialVal);
+
+    const toggle = () => {
+        setState(!state);
+    }
+
+    return [state, toggle];
+} -->
