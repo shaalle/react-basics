@@ -1212,3 +1212,57 @@ export const useToggle = (initialVal = false) => {
 
     return [state, toggle];
 } -->
+
+<!-- ------------ Example 20:  Fetching Data From an Api  using Custom Hooks & React Query Part 2 ----------------------------------------- -->
+
+<!-- import "./App.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Cat } from "./components/Cat";
+function App() {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
+  return (
+    <div className="App">
+      <QueryClientProvider client={client}>
+        <Cat />
+      </QueryClientProvider>
+    </div>
+  );
+}
+
+export default App; -->
+
+<!-- Cat Component -->
+
+<!-- import { useGetCat } from "../useGetCat"
+
+export const Cat = () =>{
+    const {data, isCatLoading, refetchData} = useGetCat();
+    if(isCatLoading) return <h1>Loading...</h1>
+    return <div>
+        <h1>{data?.fact}</h1>
+        <button onClick={refetchData}>refetch</button>
+    </div>
+} -->
+
+<!-- useGetCat Hook -->
+
+<!-- import { useQuery } from '@tanstack/react-query';
+import Axios from 'axios';
+
+export const useGetCat = () => {
+    const {data, refetch, isLoading: isCatLoading} = useQuery(["cat"], () => {
+        return Axios.get('https://catfact.ninja/fact').then((res) => res.data )
+    });
+
+    const refetchData = () => {
+        alert('DATA REFETCHED')
+        refetch();
+    }
+    return {data, refetchData, isCatLoading};
+} -->
