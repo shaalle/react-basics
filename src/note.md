@@ -1336,3 +1336,48 @@ export default App; -->
     </div>
 } -->
 
+<!-- ------------ Example 21:  Persson Component With Type Safety Part 2 ----------------------------------------- -->
+
+<!-- import "./App.css";
+import { Person } from "./components/Person";
+
+function App() {
+  
+  return (
+    <div className="App">
+    <Person
+      name='Sucdi'
+      email='Sucdi@gmail.com'
+      age='19'
+      ismarried= {false}
+      friends= {["Salmo", "Nasro", "Jamaal"]} />
+    
+    </div>
+  );
+}
+
+export default App; -->
+
+<!-- Person Component -->
+
+<!-- import PropTypes from 'prop-types'
+export const Person = (props) => {
+    return <div>
+        <h1>Name: {props.name}</h1>
+        <h1>Email: {props.email}</h1>
+        <h1>Age: {props.age}</h1>
+        <h1>This person {props.isMarried ? "is" : "is not"} MARRIED</h1>
+         {props.friends.map((firend) => {
+            return <h1>{firend}</h1>
+        })} 
+       
+    </div>
+}
+
+Person.PropTypes = {
+    name: PropTypes.string,
+    email: PropTypes.string,
+    age: PropTypes.number,
+    isMarried: PropTypes.bool,
+    friends: PropTypes.arrayOf(PropTypes.string),
+} -->
