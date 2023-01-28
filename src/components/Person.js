@@ -12,7 +12,7 @@ export const Person = (props) => {
     </div>
 }
 
-Person.PropTypes = {
+Person.propTypes = {
     name: PropTypes.string,
     email: PropTypes.string,
     age: PropTypes.number,
